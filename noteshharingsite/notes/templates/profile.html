@@ -1,0 +1,59 @@
+{% extends "usernav.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container mt-5">
+  <h2 class="text-center">Profile</h2>
+  <hr>
+  <div class="row">
+    <div class="col-md-6">
+      <b>Full Name:</b>
+
+    </div>
+    <div class="col-md-6" style="text-transform : capitalize">
+      {{data.user.first_name}} {{data.user.last_name}}
+
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <b>Email id::</b>
+<hr>
+    </div>
+    <div class="col-md-6" s>
+      {{data.user.username}}
+
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <b>Contact:</b>
+
+    </div>
+    <div class="col-md-6" >
+      {{data.contact}}
+
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <b>Branch:</b>
+
+    </div>
+    <div class="col-md-6" >
+      {{data.branch}}
+
+    </div>
+    <a href="{% url 'edit_profile' %}" class="btn btn-primary">Edit Profile</a>
+
+  </div>
+
+
+</div>
+
+
+
+{% endblock %}

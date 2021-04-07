@@ -1,0 +1,74 @@
+{% extends "usernav.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container mt-5">
+  <h2 class="text-center">Edit Profile</h2>
+  <hr>
+  <div class="row">
+    <div class="col-sm-6"></div>
+    <form method="post">
+      {% csrf_token %}
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label>Firstname</label>
+          <input type="text" name="" class="form-control" value="{{data.user.first_name}}" name="firstname">
+
+        </div>
+        <div class="form-group col-md-6">
+          <label>Lastname</label>
+          <input type="text" name="" class="form-control" value="{{data.user.last_name}}" name="lastname">
+
+        </div>
+
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label>Email id</label>
+          <input type="text" name="" class="form-control" value="{{data.user.username}}" name="emailid" readonly>
+
+        </div>
+        <div class="form-group col-md-12">
+          <label>Contact</label>
+          <input type="text" name="" class="form-control" value="{{data.contact}}" name="contact">
+
+        </div>
+        <div class="form-group col-md-12">
+          <label>Branch</label>
+          <select class="form-control" name="branch">
+          <option value="{{data.branch}}">{{data.branch}}</option>
+          <option value="CS">CS</option>
+          <option value="ME">ME</option>
+          <option value="CIVIL">CIVIL</option>
+          <option value="EEE">EEE</option>
+          <option value="ECE">ECE</option>
+          <option value="TCE">TCE</option>    ``
+
+
+          </select>
+
+        </div>
+
+      </div>
+      <input type="submit" value="update"  class="btn btn-primary">
+    </form>
+
+    </div>
+
+  </div>
+  {% if error %}
+  <script>
+    alert('profile Updated sucessfully');
+    window.location = "{% url 'profile' %}";
+
+
+  </script>
+  {% endif %}
+
+
+
+
+
+
+
+{% endblock %}
